@@ -12,8 +12,11 @@ item::item() {
     availability = false; // Default availability
 }
 
-item::item(int itemId, const std::string &itemTitle, bool isAvailable) {
-
+// Parameterized constructor
+item::item(int itemId, const std::string& itemTitle, bool isAvailable) {
+    id = itemId;
+    title = itemTitle;
+    availability = isAvailable;
 }
 
 item::~item() {
@@ -21,7 +24,7 @@ item::~item() {
 }
 
 int item::getId() const {
-    return 0;
+    return id;
 }
 
 void item::setId(int itemId) {
@@ -29,7 +32,7 @@ void item::setId(int itemId) {
 }
 
 std::string item::getTitle() const {
-    return string();
+    return title;
 }
 
 void item::setTitle(const string &itemTitle) {
@@ -37,7 +40,7 @@ void item::setTitle(const string &itemTitle) {
 }
 
 bool item::getAvailability() const {
-    return false;
+    return availability;
 }
 
 void item::setAvailability(bool isAvailable) {
