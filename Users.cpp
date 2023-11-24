@@ -13,3 +13,11 @@ std::string Users::getUserID() const {
     return userID;
 }
 
+void Users::setUsername(const string &uname) {
+    username = uname;
+}
+
+void Users::setUserID(const string &UID) {
+    userID = UID;
+}
+

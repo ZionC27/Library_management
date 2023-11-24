@@ -12,13 +12,13 @@ using namespace std;
 class item {
 private:
     int id;
-    std::string title;
+    string title;
     bool availability;
 
 public:
     // Constructors
     item(); // Default constructor
-    item(int itemId, const std::string& itemTitle, bool isAvailable);
+    item(int itemId, const string& itemTitle, bool isAvailable);
 
     // Destructor
     ~item(); // Destructor declaration

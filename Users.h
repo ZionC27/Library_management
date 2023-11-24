@@ -4,17 +4,24 @@
 #include <string>
 #include "Book.h"
 
+using namespace std;
+
+
+
 class Users {
 private:
-    std::string username;
-    std::string userID;
+    string username;
+    string userID;
 
 public:
     Users();
-    Users(const std::string& uname, const std::string& UID);
+    Users(const string& uname, const string& UID);
 
-    std::string getUsername() const;
-    std::string getUserID() const;
+    string getUsername() const;
+    void setUsername(const string& uname);
+
+    string getUserID() const;
+    void setUserID(const string& UID);
 };
 
 #endif // USERS_H
