@@ -1,36 +1,14 @@
+
 #include "Users.h"
 
-using namespace std;
+Users::Users() {}
 
-Users::Users(){}
+Users::Users(const std::string& uname, const std::string& UID) : username(uname), userID(UID) {}
 
-Users::Users(string uname, string UID) : username(uname), userID(UID){}
-
-void Users::createUsers(string username, string userID)
-{
-    Users newUser(username, userID);
-    usersList.push_back(newUser);
-}
-//just printing
-void Users::displayUser(string username)
-{
-    for(Users& user : usersList)
-    {
-        if(username == user.getUsername())
-        {
-            cout << user.getUsername() << endl;
-            cout << user.getuserID() << endl;
-        }
-    }
+std::string Users::getUsername() const {
+    return username;
 }
 
-string Users::getUsername()
-{
-    return  username;
-}
-
-string Users::getuserID()
-{
+std::string Users::getUserID() const {
     return userID;
 }
-
