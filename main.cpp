@@ -16,6 +16,6 @@ int main() {
     Users users;
     getUsers(users);
     getUsers(users);
-    users.displayUser("zion");
+    users.displayUser("name");
     return 0;
 }
