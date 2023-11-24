@@ -9,8 +9,11 @@
 class Library {
 private:
     std::vector<Users> usersList;
+    int nextUserID;
 
 public:
+    Library();
+    std::string getNextUserID();
     void addUser(const std::string& username, const std::string& userID);
     void displayUser(const std::string& username);
 };

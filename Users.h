@@ -2,6 +2,7 @@
 #define USERS_H
 
 #include <string>
+#include "Book.h"
 
 class Users {
 private:
