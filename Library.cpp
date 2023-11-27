@@ -25,3 +25,23 @@ void Library::displayUser(const std::string& username) {
         }
     }
 }
+
+void Library::addBook(const Book& book) {
+    books.push_back(book);
+}
+
+void Library::addCD(const CD& cd) {
+    cds.push_back(cd);
+}
+
+void Library::printBooks() const {
+    for (const auto& book : books) {
+        book.print();
+    }
+}
+
+void Library::printCD() const {
+    for (const auto& cd : cds) {
+        cd.print();
+    }
+}

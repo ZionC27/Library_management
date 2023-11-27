@@ -64,13 +64,25 @@ int main() {
     //  class tester
     Users u("asdas", "123");
     u.printuser();
-    Book b("12", "IDK", "TIM", 120, true);
-    b.setAuthor("13fsadf");
-    b.print();
+    Book first("12", "IDK", "TIM", 120, true);
+    first.setAuthor("13fsadf");
+//    first.print();
+
+    Book second("2", "second", "another author", 120, true);
+    second.setAuthor("13fsadf");
+
+
     CD c("131","asdf", "dasdas",134, false);
     c.print();
     Library library;
     std::string option;
+
+    library.addBook(first);
+    library.addBook(second);
+    library.printBooks();
+
+    library.addCD(c);
+    library.printCD();
 
     do {
         createUsers(library);
