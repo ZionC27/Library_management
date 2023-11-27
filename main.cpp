@@ -34,18 +34,17 @@ int actions() {
     bool validInput = false;
 
     while (!validInput) {
-        cout << "1. Do you want to update the existing account?" << endl;
-        cout << "2. Do you want to create an account?" << endl;
-        cout << "3. Do you want to borrow a book?" << endl;
-        cout << "4. Do you want to return a book?" << endl;
-        cout << "5. Do you want to see borrowing and returning history of your account?" << endl;
+        cout << "1. Do you want to create an account?" << endl;
+        cout << "2. Do you want to borrow a book?" << endl;
+        cout << "3. Do you want to return a book?" << endl;
+        cout << "4. Do you want to see borrowing and returning history of your account?" << endl;
         cout << "Enter action number: ";
         cin >> action_number;
 
-        if (action_number >= 1 && action_number <= 5) {
+        if (action_number >= 1 && action_number <= 4) {
             validInput = true;
         } else {
-            cout << "Please enter a number between 1 and 5." << endl;
+            cout << "Please enter a number between 1 and 4." << endl;
             // Clear the input buffer to prevent an infinite loop in case of non-integer input
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
