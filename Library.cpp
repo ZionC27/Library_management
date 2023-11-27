@@ -26,10 +26,12 @@ void Library::displayUser(const std::string& username) {
     }
 }
 
+//adding book vector
 void Library::addBook(const Book& book) {
     books.push_back(book);
 }
 
+//adding cd vector
 void Library::addCD(const CD& cd) {
     cds.push_back(cd);
 }

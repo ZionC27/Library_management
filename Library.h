@@ -10,6 +10,7 @@
 
 class Library {
 private:
+//    vectors
     std::vector<Users> usersList;
     std::vector<Book> books; // Vector to store Book objects
     std::vector<CD> cds;

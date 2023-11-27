@@ -73,7 +73,7 @@ int main() {
 
 
     CD c("131","asdf", "dasdas",134, false);
-    c.print();
+//    c.print();
     Library library;
     std::string option;
 
