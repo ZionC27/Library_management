@@ -38,13 +38,14 @@ int actions() {
         cout << "2. Do you want to borrow a book?" << endl;
         cout << "3. Do you want to return a book?" << endl;
         cout << "4. Do you want to see borrowing and returning history of your account?" << endl;
+        cout << "5. Do you want to exit?" << endl;
         cout << "Enter action number: ";
         cin >> action_number;
 
-        if (action_number >= 1 && action_number <= 4) {
+        if (action_number >= 1 && action_number <= 5) {
             validInput = true;
         } else {
-            cout << "Please enter a number between 1 and 4." << endl;
+            cout << "Please enter a number between 1 and 5." << endl;
             // Clear the input buffer to prevent an infinite loop in case of non-integer input
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -57,8 +58,7 @@ int actions() {
 int main() {
 
     // get user to enter action they want to perform
-    int act = actions();
-    cout << "Action choosen is: " <<act << endl;
+
 
     //  class tester
     Users u("asdas", "123");
@@ -81,10 +81,34 @@ int main() {
     library.addBook(second);
     library.retrieveBook("booktitleone");
 
-    do {
-        createUsers(library);
-    } while (continueCreatingAccounts(library, option));
 
+    int act = 0;
+
+    while (act != 5) {
+        act = actions();
+        std::cout << "Action chosen is: " << act << std::endl;
+
+        switch (act) {
+            case 1:
+                createUsers(library);
+                break;
+            case 2:
+                std::cout << "You entered 2" << std::endl;
+                break;
+            case 3:
+                std::cout << "You entered 3" << std::endl;
+                break;
+            case 4:
+                std::cout << "You entered 4" << std::endl;
+                break;
+            case 5:
+                std::cout << "Exiting..." << std::endl;
+                break;
+            default:
+                std::cout << "Invalid input or out of range" << std::endl;
+                break;
+        }
+    }
 
     return 0;
 }
