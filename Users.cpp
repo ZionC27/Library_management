@@ -21,3 +21,12 @@ void Users::setUserID(const string &UID) {
     userID = UID;
 }
 
+void Users::printuser() const {
+    cout << "Username: " << username << endl;
+    cout << "User ID: " << userID << endl;
+
+
+}
+
+
+

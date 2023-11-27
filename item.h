@@ -12,20 +12,20 @@ using namespace std;
 
 class item {
 private:
-    int id;
+    string id;
     string title;
     bool availability;
 
 public:
     // Constructors
     item(); // Default constructor
-    item(int itemId, const string& itemTitle, bool isAvailable);
+    item(string itemId, const string& itemTitle, bool isAvailable);
 
     // Destructor
     ~item(); // Destructor declaration
 
     // Accessors and mutators (getters and setters)
-    int getId() const;
+    string getId() const;
     void setId(int itemId);
 
     string getTitle() const;

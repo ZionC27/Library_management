@@ -22,6 +22,8 @@ public:
 
     string getUserID() const;
     void setUserID(const string& UID);
+
+    void printuser() const;
 };
 
 #endif // USERS_H

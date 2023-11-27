@@ -13,7 +13,7 @@ Book::Book() : item() {
 }
 
 // Parameterized constructor
-Book::Book(int itemId, const std::string& itemTitle, const std::string& bookAuthor, int bookPages, bool isAvailable)
+Book::Book(string itemId, const std::string& itemTitle, const std::string& bookAuthor, int bookPages, bool isAvailable)
         : item(itemId, itemTitle, isAvailable) {
     author = bookAuthor;
     pages = bookPages;

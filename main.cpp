@@ -29,10 +29,12 @@ bool continueCreatingAccounts(Library& library, std::string option) {
 int main() {
 
     //  class tester
-    Book b(12, "IDK", "TIM", 120, true);
+    Users u("asdas", "123");
+    u.printuser();
+    Book b("12", "IDK", "TIM", 120, true);
     b.setAuthor("13fsadf");
     b.print();
-    CD c(131,"asdf", "dasdas",134, false);
+    CD c("131","asdf", "dasdas",134, false);
     c.print();
     Library library;
     std::string option;
