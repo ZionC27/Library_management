@@ -2,6 +2,7 @@
 #include <string>
 #include "Users.h"
 #include "Library.h"
+#include "CD.h"
 
 void createUsers(Library& library) {
     std::string username, userID;
@@ -26,12 +27,20 @@ bool continueCreatingAccounts(Library& library, std::string option) {
 }
 
 int main() {
+
+    //  class tester
+    Book b(12, "IDK", "TIM", 120, true);
+    b.setAuthor("13fsadf");
+    b.print();
+    CD c(131,"asdf", "dasdas",134, false);
+    c.print();
     Library library;
     std::string option;
 
     do {
         createUsers(library);
     } while (continueCreatingAccounts(library, option));
+
 
     return 0;
 }

@@ -3,6 +3,7 @@
 //
 
 #include "Book.h"
+#include <iostream>
 
 using namespace std;
 // Default constructor
@@ -18,6 +19,8 @@ Book::Book(int itemId, const std::string& itemTitle, const std::string& bookAuth
     pages = bookPages;
 }
 
+Book::~Book() {}
+
 // Getter and setter implementations for author
 string Book::getAuthor() const {
     return author;
@@ -25,4 +28,20 @@ string Book::getAuthor() const {
 
 void Book::setAuthor(const string& bookAuthor) {
     author = bookAuthor;
+}
+
+int Book::getpage() const {
+    return pages;
+}
+
+void Book::setpage(const int &page) {
+    pages = page;
+}
+
+
+void Book::print() const {
+    item::print();
+    cout << "Author: " << author << endl;
+    cout << "Pages: " << pages << endl;
+    cout << endl;
 }

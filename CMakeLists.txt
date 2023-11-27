@@ -9,4 +9,6 @@ add_executable(Library_management main.cpp
         Library.cpp
         item.cpp
         Book.h
-        Book.cpp)
+        Book.cpp
+        CD.h
+        CD.cpp)

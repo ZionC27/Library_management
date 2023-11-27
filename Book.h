@@ -5,6 +5,7 @@
 #ifndef LIBRARY_MANAGEMENT_BOOK_H
 #define LIBRARY_MANAGEMENT_BOOK_H
 #include "Item.h" // Include the base class header
+#include <iostream>
 
 using namespace std;
 
@@ -16,12 +17,17 @@ private:
 public:
     // Constructors
     Book(); // Default constructor
-    Book(int itemId, const std::string& itemTitle, const std::string& bookAuthor, int bookPages, bool isAvailable);
+    Book(int itemId, const string& itemTitle, const string& bookAuthor, int bookPages, bool isAvailable);
+    ~Book();
 
+    // Accessors and mutators (getters and setters) for author and page
+    string getAuthor() const;
+    void setAuthor(const string& bookAuthor);
 
-    // Accessors and mutators (getters and setters) for author
-    std::string getAuthor() const;
-    void setAuthor(const std::string& bookAuthor);
+    int getpage() const;
+    void setpage(const int& page);
+
+    void print() const override;
 };
 
 #endif //LIBRARY_MANAGEMENT_BOOK_H

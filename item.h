@@ -6,6 +6,7 @@
 #define LIBRARY_MANAGEMENT_ITEM_H
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -32,6 +33,8 @@ public:
 
     bool getAvailability() const;
     void setAvailability(bool isAvailable);
+
+    virtual void print() const;
 };
 
 #endif //LIBRARY_MANAGEMENT_ITEM_H
