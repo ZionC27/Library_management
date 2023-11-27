@@ -64,11 +64,11 @@ int main() {
     //  class tester
     Users u("asdas", "123");
     u.printuser();
-    Book first("12", "IDK", "TIM", 120, true);
-    first.setAuthor("13fsadf");
+    Book first("12", "booktitleone", "TIM", 120, true);
+    first.setAuthor("Authors");
 //    first.print();
 
-    Book second("2", "second", "another author", 120, true);
+    Book second("2", "booktitlesecond", "another author", 120, true);
     second.setAuthor("13fsadf");
 
 
@@ -76,13 +76,11 @@ int main() {
 //    c.print();
     Library library;
     std::string option;
+    std::string bookname = "second";
 
     library.addBook(first);
     library.addBook(second);
-    library.printBooks();
-
-    library.addCD(c);
-    library.printCD();
+    library.retrieveBook("booktitleone");
 
     do {
         createUsers(library);

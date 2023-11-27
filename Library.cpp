@@ -36,6 +36,19 @@ void Library::addCD(const CD& cd) {
     cds.push_back(cd);
 }
 
+
+void Library::retrieveBook(const std::string bookTitle)
+{
+    for(const auto& book : books)
+    {
+        if(book.getTitle() == bookTitle)
+        {
+            std::cout << bookTitle << " exists" << std::endl;
+            break;
+        }
+    }
+}
+
 void Library::printBooks() const {
     for (const auto& book : books) {
         book.print();

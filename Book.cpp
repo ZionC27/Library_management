@@ -8,6 +8,7 @@
 using namespace std;
 // Default constructor
 Book::Book() : item() {
+    title = "";
     author = ""; // Default author
     int pages = 0;
 }
@@ -15,11 +16,16 @@ Book::Book() : item() {
 // Parameterized constructor
 Book::Book(string itemId, const std::string& itemTitle, const std::string& bookAuthor, int bookPages, bool isAvailable)
         : item(itemId, itemTitle, isAvailable) {
+    title = itemTitle;
     author = bookAuthor;
     pages = bookPages;
 }
 
 Book::~Book() {}
+
+string Book::getTitle() const {
+    return title;
+}
 
 // Getter and setter implementations for author
 string Book::getAuthor() const {
