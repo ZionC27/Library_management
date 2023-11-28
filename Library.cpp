@@ -77,7 +77,7 @@ void Library::retrieveBook(const std::string bookTitle)
 void Library::showAvailableBooks() const {
     std::cout << "Available books:" << std::endl;
     for(const auto& book : books) {
-        std::cout << "Id" << book.getId() << std::endl;
+        std::cout << "Id: " << book.getId() << std::endl;
         std::cout << "Title: " << book.getTitle() << std::endl;
         std::cout << "Author: " << book.getAuthor() << std::endl;
         std::cout << "Pages: " << book.getpage() << std::endl;
@@ -95,5 +95,17 @@ void Library::printBooks() const {
 void Library::printCD() const {
     for (const auto& cd : cds) {
         cd.print();
+    }
+}
+
+Users Library::checkuser(const string entered){
+    for(const Users& user : usersList)
+    {
+        if (entered == user.getUsername() || entered == user.getUserID()) {
+            return user;
+        }
+        else{
+            return Users();
+        }
     }
 }

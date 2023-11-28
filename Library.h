@@ -31,6 +31,8 @@ public:
     void displayAllUser();
 
     void displayUserbyID(const string &id);
+
+    Users checkuser(const string entered);
 };
 
 #endif // LIBRARY_H

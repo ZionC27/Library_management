@@ -60,13 +60,30 @@ int actions() {
 }
 
 int main() {
+
+
     Library l;
     l.addUser("a", "1");
     l.addUser("b", "2");
     l.addUser("c", "3");
     l.addUser("d", "4");
-    l.displayUserbyID("4");
-    l.displayAllUser();
+//    l.displayUserbyID("4");
+//    l.displayAllUser();
+    Users acsessuser = l.checkuser("e");
+    if (acsessuser.getUsername().empty()){
+        cout << "No such user " << endl;
+    }
+    else{
+        cout << acsessuser.getUsername() << endl;
+    }
+    Users acsessuser2 = l.checkuser("a");
+    if (acsessuser2.getUsername().empty()){
+        cout << "No such user " << endl;
+    }
+    else{
+        cout << acsessuser.getUsername() << endl;
+    }
+    //acsessuser.printuser();
 
 
 

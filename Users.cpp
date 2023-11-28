@@ -1,7 +1,10 @@
 
 #include "Users.h"
 
-Users::Users() {}
+Users::Users() {
+    username = "";
+    userID = "";
+}
 
 Users::Users(const std::string& uname, const std::string& UID) : username(uname), userID(UID) {}
 

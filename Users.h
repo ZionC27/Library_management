@@ -6,8 +6,6 @@
 
 using namespace std;
 
-
-
 class Users {
 private:
     string username;
