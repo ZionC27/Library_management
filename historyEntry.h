@@ -1,0 +1,14 @@
+//
+// Created by minim on 2023/11/27.
+//
+
+#ifndef LIBRARY_MANAGEMENT_HISTORYENTRY_H
+#define LIBRARY_MANAGEMENT_HISTORYENTRY_H
+
+
+class historyEntry {
+
+};
+
+
+#endif //LIBRARY_MANAGEMENT_HISTORYENTRY_H

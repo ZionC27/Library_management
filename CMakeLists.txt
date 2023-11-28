@@ -11,4 +11,8 @@ add_executable(Library_management main.cpp
         Book.h
         Book.cpp
         CD.h
-        CD.cpp)
+        CD.cpp
+        history.cpp
+        history.h
+        historyEntry.cpp
+        historyEntry.h)
