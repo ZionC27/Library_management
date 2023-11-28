@@ -15,17 +15,14 @@ Book::Book() : item() {
 
 // Parameterized constructor
 Book::Book(string itemId, const std::string& itemTitle, const std::string& bookAuthor, int bookPages, bool isAvailable)
-        : item(itemId, itemTitle, isAvailable) {
-    title = itemTitle;
-    author = bookAuthor;
-    pages = bookPages;
+        : item(itemId, itemTitle, isAvailable), pages(bookPages){
 }
 
 Book::~Book() {}
 
-string Book::getTitle() const {
-    return title;
-}
+//string Book::getTitle() const {
+//    return title;
+//}
 
 // Getter and setter implementations for author
 string Book::getAuthor() const {

@@ -21,7 +21,7 @@ public:
     Book(string itemId, const string& itemTitle, const string& bookAuthor, int bookPages, bool isAvailable);
     ~Book();
 
-    string getTitle() const;
+//    string getTitle() const;
 
     // Accessors and mutators (getters and setters) for author and page
     string getAuthor() const;
