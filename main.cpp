@@ -34,12 +34,16 @@ int actions() {
     bool validInput = false;
 
     while (!validInput) {
+        cout << endl;
+        cout << "------------------------------------" << endl;
         cout << "1. Do you want to create an account?" << endl;
         cout << "2. Do you want to borrow a book?" << endl;
         cout << "3. Do you want to return a book?" << endl;
         cout << "4. Do you want to see borrowing and returning history of your account?" << endl;
         cout << "5. Do you want to exit?" << endl;
-        cout << "Enter action number: ";
+        cout << "------------------------------------" << endl;
+        cout << "Enter action number: " << endl;
+
         cin >> action_number;
 
         if (action_number >= 1 && action_number <= 5) {
@@ -63,11 +67,11 @@ int main() {
     //  class tester
     Users u("asdas", "123");
     u.printuser();
-    Book first("12", "booktitleone", "TIM", 120, true);
+    Book first("12", "firstBook", "firstAuthor", 120, true);
     first.setAuthor("Authors");
 //    first.print();
 
-    Book second("2", "booktitlesecond", "another author", 120, true);
+    Book second("2", "secondBook", "secondAuthor", 120, true);
     second.setAuthor("13fsadf");
 
 
@@ -79,10 +83,11 @@ int main() {
 
     library.addBook(first);
     library.addBook(second);
-    library.retrieveBook("booktitleone");
+
 
 
     int act = 0;
+    string bookName;
 
     while (act != 5) {
         act = actions();
@@ -93,7 +98,11 @@ int main() {
                 createUsers(library);
                 break;
             case 2:
-                std::cout << "You entered 2" << std::endl;
+                cout << "select which book you want to borrow" << endl;
+                library.showAvailableBooks();
+                cout << "Which book do you want to borrow" << endl;
+                cin >> bookName;
+                library.retrieveBook(bookName);
                 break;
             case 3:
                 std::cout << "You entered 3" << std::endl;

@@ -49,6 +49,20 @@ void Library::retrieveBook(const std::string bookTitle)
     }
 }
 
+
+void Library::showAvailableBooks() const {
+    std::cout << "Available books:" << std::endl;
+    for(const auto& book : books) {
+        std::cout << "Title: " << book.getTitle() << std::endl;
+        std::cout << "Author: " << book.getAuthor() << std::endl;
+//        std::cout << "Pages: " << book.getPages() << std::endl;
+        std::cout << std::endl;
+    }
+}
+
+
+
+
 void Library::printBooks() const {
     for (const auto& book : books) {
         book.print();

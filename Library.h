@@ -26,6 +26,7 @@ public:
     void printBooks() const;
     void printCD() const;
     void retrieveBook(const std::string book);
+    void showAvailableBooks() const;
 };
 
 #endif // LIBRARY_H
