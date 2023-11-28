@@ -43,7 +43,14 @@ void Library::retrieveBook(const std::string bookTitle)
     {
         if(book.getTitle() == bookTitle)
         {
-            std::cout << bookTitle << " exists" << std::endl;
+            std::cout << book.getTitle() << " exists" << std::endl;
+
+            std::string itemId = book.getId();
+            std::string itemTitle;
+            std::string bookAuthor;
+            int bookPages;
+            bool isAvailable;
+//            book.addHistoryEntry(itemId, itemTitle, bookAuthor, bookPages, isAvailable);
             break;
         }
     }
@@ -53,14 +60,13 @@ void Library::retrieveBook(const std::string bookTitle)
 void Library::showAvailableBooks() const {
     std::cout << "Available books:" << std::endl;
     for(const auto& book : books) {
+        std::cout << "Id" << book.getId() << std::endl;
         std::cout << "Title: " << book.getTitle() << std::endl;
         std::cout << "Author: " << book.getAuthor() << std::endl;
-//        std::cout << "Pages: " << book.getPages() << std::endl;
+        std::cout << "Pages: " << book.getpage() << std::endl;
         std::cout << std::endl;
     }
 }
-
-
 
 
 void Library::printBooks() const {

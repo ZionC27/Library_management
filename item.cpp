@@ -23,8 +23,6 @@ item::~item() {
 
 }
 
-
-
 string item::getId() const {
     return id;
 }

@@ -103,6 +103,7 @@ int main() {
                 cout << "Which book do you want to borrow" << endl;
                 cin >> bookName;
                 library.retrieveBook(bookName);
+
                 break;
             case 3:
                 std::cout << "You entered 3" << std::endl;
