@@ -20,13 +20,17 @@ public:
     Library();
     std::string getNextUserID();
     void addUser(const std::string& username, const std::string& userID);
-    void displayUser(const std::string& username);
+    void displayUserbyName(const std::string& username);
     void addBook(const Book& book);
     void addCD(const CD& cd);
     void printBooks() const;
     void printCD() const;
     void retrieveBook(const std::string book);
     void showAvailableBooks() const;
+
+    void displayAllUser();
+
+    void displayUserbyID(const string &id);
 };
 
 #endif // LIBRARY_H

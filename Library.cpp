@@ -15,7 +15,7 @@ void Library::addUser(const std::string& username, const std::string& userID) {
     usersList.push_back(newUser);
 }
 
-void Library::displayUser(const std::string& username) {
+void Library::displayUserbyName(const std::string& username) {
     for (const Users& user : usersList) {
         if (username == user.getUsername()) {
             std::cout << "--------------" << std::endl;
@@ -23,6 +23,23 @@ void Library::displayUser(const std::string& username) {
             std::cout << "UserID: " << user.getUserID() << std::endl;
             std::cout << "--------------" << std::endl;
         }
+    }
+}
+
+void Library::displayUserbyID(const std::string& id) {
+    for (const Users& user : usersList) {
+        if (id == user.getUserID()) {
+            std::cout << "--------------" << std::endl;
+            std::cout << "Username: " << user.getUsername() << std::endl;
+            std::cout << "UserID: " << user.getUserID() << std::endl;
+            std::cout << "--------------" << std::endl;
+        }
+    }
+}
+
+void Library::displayAllUser() {
+    for (const Users& user : usersList) {
+        user.printuser();
     }
 }
 

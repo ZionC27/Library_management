@@ -13,7 +13,7 @@ void createUsers(Library& library) {
     std::cin >> username;
     userID = library.getNextUserID();
     library.addUser(username, userID);
-    library.displayUser(username);
+    library.displayUserbyName(username);
 }
 
 //user prompt
@@ -60,8 +60,15 @@ int actions() {
 }
 
 int main() {
+    Library l;
+    l.addUser("a", "1");
+    l.addUser("b", "2");
+    l.addUser("c", "3");
+    l.addUser("d", "4");
+    l.displayUserbyID("4");
+    l.displayAllUser();
 
-    // get user to enter action they want to perform
+
 
 
     //  class tester
