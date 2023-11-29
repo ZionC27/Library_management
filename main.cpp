@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <chrono>
+#include <ctime>
+#include <sstream>
+#include <iomanip>
 #include "Users.h"
 #include "Library.h"
 #include "CD.h"
@@ -47,6 +51,14 @@ int actions() {
     return action_number;
 }
 
+std::string currentDate() {
+    auto now = std::chrono::system_clock::now();
+    std::time_t currentTime = std::chrono::system_clock::to_time_t(now);
+    std::stringstream ss;
+    ss << std::put_time(std::localtime(&currentTime), "%Y-%m-%d %H:%M:%S");
+    return ss.str();
+}
+
 int main() {
     Library library;
     library.addUser("a", "1");
@@ -76,9 +88,9 @@ int main() {
     //  class tester
     Users u("asdas", "123");
     u.printuser();
-
-    item* first = new Book("12", "firstBook", "firstAuthor", 120, true);
-    item* second = new Book("2", "secondBook", "secondAuthor", 120, true);
+    std::string date = currentDate();
+    item* first = new Book("12", "firstBook", "firstAuthor", 120, true, date);
+    item* second = new Book("2", "secondBook", "secondAuthor", 120, true, date);
 
 
     library.addBook(first);

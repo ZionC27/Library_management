@@ -10,13 +10,15 @@ item::item() {
     id = ""; // Default id
     title = ""; // Default title
     availability = false; // Default availability
+    date = "";
 }
 
 // Parameterized constructor
-item::item(string itemId, const std::string& itemTitle, bool isAvailable) {
+item::item(string itemId, const std::string& itemTitle, bool isAvailable, const std::string itemDate) {
     id = itemId;
     title = itemTitle;
     availability = isAvailable;
+    date = itemDate;
 }
 
 item::~item() {
@@ -45,6 +47,12 @@ bool item::getAvailability() const {
 
 void item::setAvailability(bool isAvailable) {
     availability = isAvailable;
+}
+
+
+std::string item::getDate() const
+{
+    return date;
 }
 
 void item::print() const {

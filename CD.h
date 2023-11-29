@@ -18,7 +18,7 @@ private:
 public:
     // Constructors
     CD(); // Default constructor
-    CD(string itemId, const string &itemTitle, const string &CDDirector, int CDRuntime, bool isAvailable);
+    CD(string itemId, const string &itemTitle, const string &CDDirector, int CDRuntime, bool isAvailable, const string itemDate);
     ~CD();
 
     // Accessors and mutators (getters and setters) for author

@@ -13,8 +13,8 @@ CD::CD(): item()  {
     runtime = 0;
 }
 
-CD::CD(string itemId, const string &itemTitle, const string &CDDirector, int CDRuntime, bool isAvailable)
-        : item(itemId, itemTitle, isAvailable) {
+CD::CD(string itemId, const string &itemTitle, const string &CDDirector, int CDRuntime, bool isAvailable, const string itemDate)
+        : item(itemId, itemTitle, isAvailable, itemDate) {
     director = CDDirector;
     runtime = CDRuntime;
 

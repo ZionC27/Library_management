@@ -84,6 +84,7 @@ void Library::showAvailableBooks() const {
     for(const auto& itemPtr : items) {
         std::cout << "Id: " << itemPtr -> getId() << std::endl;
         std::cout << "Title: " << itemPtr->getTitle() << std::endl;
+        std::cout << itemPtr->getDate() << std::endl;
         Book* bookPtr = dynamic_cast<Book *>(itemPtr);
         if(bookPtr != nullptr){
             std::cout << "Author: " << bookPtr->getAuthor() << std::endl;

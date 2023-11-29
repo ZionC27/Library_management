@@ -15,11 +15,12 @@ private:
     string id;
     string title;
     bool availability;
+    string date;
 
 public:
     // Constructors
     item(); // Default constructor
-    item(string itemId, const string& itemTitle, bool isAvailable);
+    item(string itemId, const string& itemTitle, bool isAvailable, const string itemDate);
 
     // Destructor
     ~item(); // Destructor declaration
@@ -33,6 +34,7 @@ public:
 
     bool getAvailability() const;
     void setAvailability(bool isAvailable);
+    string getDate() const;
 
     virtual void print() const;
 };
