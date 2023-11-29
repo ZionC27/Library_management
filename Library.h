@@ -25,7 +25,7 @@ public:
     void addCD(const CD& cd);
 //    void printBooks() const;
     void printCD() const;
-//    void retrieveBook(const std::string book);
+    void retrieveBook(const std::string book);
     void showAvailableBooks() const;
 
     void displayAllUser();

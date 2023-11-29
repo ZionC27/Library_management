@@ -53,25 +53,25 @@ void Library::addCD(const CD& cd) {
     cds.push_back(cd);
 }
 
-//
-//void Library::retrieveBook(const std::string bookTitle)
-//{
-//    for(const auto& book : books)
-//    {
-//        if(book.getTitle() == bookTitle)
-//        {
-//            std::cout << book.getTitle() << " exists" << std::endl;
-//
+
+void Library::retrieveBook(const std::string bookTitle)
+{
+    for(const auto& itemPtr: items)
+    {
+        if(itemPtr->getTitle() == bookTitle)
+        {
+            std::cout << itemPtr->getTitle() << " exists" << std::endl;
+
 //            std::string itemId = book.getId();
 //            std::string itemTitle;
 //            std::string bookAuthor;
 //            int bookPages;
 //            bool isAvailable;
 //            book.addHistoryEntry(itemId, itemTitle, bookAuthor, bookPages, isAvailable);
-//            break;
-//        }
-//    }
-//}
+            break;
+        }
+    }
+}
 
 
 void Library::showAvailableBooks() const {
