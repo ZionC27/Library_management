@@ -54,14 +54,15 @@ void Library::addCD(const CD& cd) {
 }
 
 
-void Library::retrieveBook(const std::string bookTitle)
+void Library::borrowBook(const std::string bookTitle)
 {
+    bool bookFound = false;
     for(const auto& itemPtr: items)
     {
         if(itemPtr->getTitle() == bookTitle)
         {
-            std::cout << itemPtr->getTitle() << " exists" << std::endl;
-
+            std::cout << "You are borrowing " << itemPtr->getTitle();
+            bookFound = true;
 //            std::string itemId = book.getId();
 //            std::string itemTitle;
 //            std::string bookAuthor;
@@ -71,6 +72,10 @@ void Library::retrieveBook(const std::string bookTitle)
             break;
         }
     }
+    if(!bookFound) {
+        std::cout << bookTitle << " doesn't exists" << std::endl;
+    }
+
 }
 
 
@@ -85,7 +90,6 @@ void Library::showAvailableBooks() const {
             std::cout << "Pages: " << bookPtr->getpage() << std::endl;
             std::cout << std::endl;
         }
-
     }
 }
 
@@ -101,6 +105,8 @@ void Library::printCD() const {
         cd.print();
     }
 }
+
+
 
 Users Library::checkuser(const string entered) {
     for (const Users& user : usersList) {

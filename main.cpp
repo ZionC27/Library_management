@@ -111,7 +111,7 @@ int main() {
                     std::string bookName;
                     std::cout << "Enter the book name: " << std::endl;
                     std::cin >> bookName;
-                    library.retrieveBook(bookName);
+                    library.borrowBook(bookName);
                 }
                 break;
             }

@@ -25,13 +25,12 @@ public:
     void addCD(const CD& cd);
 //    void printBooks() const;
     void printCD() const;
-    void retrieveBook(const std::string book);
+    void borrowBook(const std::string book);
     void showAvailableBooks() const;
 
     void displayAllUser();
 
     void displayUserbyID(const string &id);
-
     Users checkuser(const string entered);
 };
 
