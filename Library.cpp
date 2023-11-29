@@ -98,14 +98,11 @@ void Library::printCD() const {
     }
 }
 
-Users Library::checkuser(const string entered){
-    for(const Users& user : usersList)
-    {
+Users Library::checkuser(const string entered) {
+    for (const Users& user : usersList) {
         if (entered == user.getUsername() || entered == user.getUserID()) {
-            return user;
-        }
-        else{
-            return Users();
+            return user;  // Return the user if found
         }
     }
+    return Users();  // Return an empty Users object if no match is found
 }

@@ -67,23 +67,22 @@ int main() {
     l.addUser("b", "2");
     l.addUser("c", "3");
     l.addUser("d", "4");
-//    l.displayUserbyID("4");
-//    l.displayAllUser();
-    Users acsessuser = l.checkuser("e");
-    if (acsessuser.getUsername().empty()){
-        cout << "No such user " << endl;
-    }
-    else{
-        cout << acsessuser.getUsername() << endl;
-    }
-    Users acsessuser2 = l.checkuser("a");
-    if (acsessuser2.getUsername().empty()){
-        cout << "No such user " << endl;
-    }
-    else{
-        cout << acsessuser.getUsername() << endl;
-    }
-    //acsessuser.printuser();
+
+    // tester for check user
+    Users acsessuser = l.checkuser("c");
+//    if (acsessuser.getUsername().empty()){
+//        cout << "No such user " << endl;
+//    }
+//    else{
+//        cout << acsessuser.getUsername() << endl;
+//    }
+//    Users acsessuser2 = l.checkuser("a");
+//    if (acsessuser2.getUsername().empty()){
+//        cout << "No such user " << endl;
+//    }
+//    else{
+//        cout << acsessuser.getUsername() << endl;
+//    }
 
 
 
@@ -121,14 +120,26 @@ int main() {
             case 1:
                 createUsers(library);
                 break;
-            case 2:
-                cout << "select which book you want to borrow" << endl;
-                library.showAvailableBooks();
-                cout << "Which book do you want to borrow" << endl;
-                cin >> bookName;
-                library.retrieveBook(bookName);
-
+            case 2: {
+                std::string userInput;
+                std::cout << "What is your ID or name? " << std::endl;
+                std::cin >> userInput;
+                Users accessedUser  = l.checkuser(userInput);
+                //print name and id
+                accessedUser.printuser();
+                if (accessedUser.getUsername().empty()) {
+                    std::cout << "No such user" << std::endl;
+                } else {
+                    accessedUser.printuser();
+                    std::cout << "Select which book you want to borrow" << std::endl;
+                    library.showAvailableBooks();
+                    std::string bookName;
+                    std::cout << "Enter the book name: " << std::endl;
+                    std::cin >> bookName;
+                    library.retrieveBook(bookName);
+                }
                 break;
+            }
             case 3:
                 std::cout << "You entered 3" << std::endl;
                 break;
