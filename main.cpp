@@ -16,18 +16,6 @@ void createUsers(Library& library) {
     library.displayUserbyName(username);
 }
 
-//user prompt
-bool continueCreatingAccounts(Library& library, std::string option) {
-    do {
-        std::cout << "Do you want to create an account(Create)" << std::endl;
-        cin >> option;
-        if (option != "Create" && option != "create") {
-            return false;
-        }
-        createUsers(library);
-    }while(true);
-    return true;
-}
 
 int actions() {
     int action_number;
@@ -60,16 +48,14 @@ int actions() {
 }
 
 int main() {
-
-
-    Library l;
-    l.addUser("a", "1");
-    l.addUser("b", "2");
-    l.addUser("c", "3");
-    l.addUser("d", "4");
+    Library library;
+    library.addUser("a", "1");
+    library.addUser("b", "2");
+    library.addUser("c", "3");
+    library.addUser("d", "4");
 
     // tester for check user
-    Users acsessuser = l.checkuser("c");
+    Users acsessuser = library.checkuser("c");
 //    if (acsessuser.getUsername().empty()){
 //        cout << "No such user " << endl;
 //    }
@@ -90,21 +76,13 @@ int main() {
     //  class tester
     Users u("asdas", "123");
     u.printuser();
+
     item* first = new Book("12", "firstBook", "firstAuthor", 120, true);
-
-
     item* second = new Book("2", "secondBook", "secondAuthor", 120, true);
 
 
-    CD c("131","asdf", "dasdas",134, false);
-
-
-    Library library;
-    std::string option;
-
     library.addBook(first);
     library.addBook(second);
-
 
     int act = 0;
     string bookName;
@@ -121,7 +99,7 @@ int main() {
                 std::string userInput;
                 std::cout << "What is your ID or name? " << std::endl;
                 std::cin >> userInput;
-                Users accessedUser  = l.checkuser(userInput);
+                Users accessedUser  = library.checkuser(userInput);
                 //print name and id
                 accessedUser.printuser();
                 if (accessedUser.getUsername().empty()) {
