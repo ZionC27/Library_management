@@ -90,23 +90,20 @@ int main() {
     //  class tester
     Users u("asdas", "123");
     u.printuser();
-    Book first("12", "firstBook", "firstAuthor", 120, true);
-    first.setAuthor("Authors");
-//    first.print();
+    item* first = new Book("12", "firstBook", "firstAuthor", 120, true);
 
-    Book second("2", "secondBook", "secondAuthor", 120, true);
-    second.setAuthor("13fsadf");
+
+    item* second = new Book("2", "secondBook", "secondAuthor", 120, true);
 
 
     CD c("131","asdf", "dasdas",134, false);
-//    c.print();
+
+
     Library library;
     std::string option;
-    std::string bookname = "second";
 
     library.addBook(first);
     library.addBook(second);
-
 
 
     int act = 0;
@@ -136,7 +133,7 @@ int main() {
                     std::string bookName;
                     std::cout << "Enter the book name: " << std::endl;
                     std::cin >> bookName;
-                    library.retrieveBook(bookName);
+//                    library.retrieveBook(bookName);
                 }
                 break;
             }

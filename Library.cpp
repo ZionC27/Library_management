@@ -44,8 +44,8 @@ void Library::displayAllUser() {
 }
 
 //adding book vector
-void Library::addBook(const Book& book) {
-    books.push_back(book);
+void Library::addBook(item* bookPtr) {
+    items.push_back(bookPtr);
 }
 
 //adding cd vector
@@ -53,44 +53,48 @@ void Library::addCD(const CD& cd) {
     cds.push_back(cd);
 }
 
-
-void Library::retrieveBook(const std::string bookTitle)
-{
-    for(const auto& book : books)
-    {
-        if(book.getTitle() == bookTitle)
-        {
-            std::cout << book.getTitle() << " exists" << std::endl;
-
-            std::string itemId = book.getId();
-            std::string itemTitle;
-            std::string bookAuthor;
-            int bookPages;
-            bool isAvailable;
+//
+//void Library::retrieveBook(const std::string bookTitle)
+//{
+//    for(const auto& book : books)
+//    {
+//        if(book.getTitle() == bookTitle)
+//        {
+//            std::cout << book.getTitle() << " exists" << std::endl;
+//
+//            std::string itemId = book.getId();
+//            std::string itemTitle;
+//            std::string bookAuthor;
+//            int bookPages;
+//            bool isAvailable;
 //            book.addHistoryEntry(itemId, itemTitle, bookAuthor, bookPages, isAvailable);
-            break;
-        }
-    }
-}
+//            break;
+//        }
+//    }
+//}
 
 
 void Library::showAvailableBooks() const {
     std::cout << "Available books:" << std::endl;
-    for(const auto& book : books) {
-        std::cout << "Id: " << book.getId() << std::endl;
-        std::cout << "Title: " << book.getTitle() << std::endl;
-        std::cout << "Author: " << book.getAuthor() << std::endl;
-        std::cout << "Pages: " << book.getpage() << std::endl;
-        std::cout << std::endl;
+    for(const auto& itemPtr : items) {
+        std::cout << "Id: " << itemPtr -> getId() << std::endl;
+        std::cout << "Title: " << itemPtr->getTitle() << std::endl;
+        Book* bookPtr = dynamic_cast<Book *>(itemPtr);
+        if(bookPtr != nullptr){
+            std::cout << "Author: " << bookPtr->getAuthor() << std::endl;
+            std::cout << "Pages: " << bookPtr->getpage() << std::endl;
+            std::cout << std::endl;
+        }
+
     }
 }
 
 
-void Library::printBooks() const {
-    for (const auto& book : books) {
-        book.print();
-    }
-}
+//void Library::printBooks() const {
+//    for (const auto& book : books) {
+//        book.print();
+//    }
+//}
 
 void Library::printCD() const {
     for (const auto& cd : cds) {
