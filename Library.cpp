@@ -62,26 +62,26 @@ void Library::borrowBook(const std::string bookTitle)
     {
         if(itemPtr->getTitle() == bookTitle)
         {
-            std::cout << "You are borrowing " << itemPtr->getTitle();
-            bookFound = true;
+            std::string itemID, itemType, itemDate;
+            bool availability;
+            itemID = itemPtr->getId();
+            itemType = "Book";
             itemPtr->setAvailability(false);
-            bool result = itemPtr->getAvailability();
-            std::cout << (result ? "Available" : "Unavailable") << std::endl;
+            availability = itemPtr->getAvailability();
+            itemDate = itemPtr->getDate();
+            std::cout << "You are borrowing " << itemPtr->getTitle() << endl;
+            bookFound = true;
+            cout << "print test" << itemID << endl;
+            cout << "print test" << itemType << endl;
+            cout << "print test" << availability << endl;
+            cout << "print test" << itemDate << endl;
 
-//            itemPtr->setAvailability()
-//            std::string itemId = book.getId();
-//            std::string itemTitle;
-//            std::string bookAuthor;
-//            int bookPages;
-//            bool isAvailable;
-//            book.addHistoryEntry(itemId, itemTitle, bookAuthor, bookPages, isAvailable);
             break;
         }
     }
     if(!bookFound) {
         std::cout << bookTitle << " doesn't exists" << std::endl;
     }
-
 }
 
 

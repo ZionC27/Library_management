@@ -17,7 +17,6 @@ CD::CD(string itemId, const string &itemTitle, const string &CDDirector, int CDR
         : item(itemId, itemTitle, isAvailable, itemDate) {
     director = CDDirector;
     runtime = CDRuntime;
-
 }
 
 CD::~CD() {
