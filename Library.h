@@ -7,6 +7,7 @@
 #include <iostream>
 #include "Book.h"
 #include "CD.h"
+#include "history.h"
 
 class Library {
 private:
