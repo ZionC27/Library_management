@@ -29,8 +29,8 @@ int actions() {
         cout << endl;
         cout << "------------------------------------" << endl;
         cout << "1. Do you want to create an account?" << endl;
-        cout << "2. Do you want to borrow a book?" << endl;
-        cout << "3. Do you want to return a book?" << endl;
+        cout << "2. Do you want to borrow a book or CD?" << endl;
+        cout << "3. Do you want to return a book or CD?" << endl;
         cout << "4. Do you want to see borrowing and returning history of your account?" << endl;
         cout << "5. Do you want to exit?" << endl;
         cout << "------------------------------------" << endl;
@@ -83,8 +83,6 @@ int main() {
 //    }
 
 
-
-
     //  class tester
     Users u("asdas", "123");
     u.printuser();
@@ -108,6 +106,7 @@ int main() {
                 createUsers(library);
                 break;
             case 2: {
+                //need to make this into function to code cleaner
                 std::string userInput;
                 std::cout << "What is your ID or name? " << std::endl;
                 std::cin >> userInput;

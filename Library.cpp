@@ -57,12 +57,18 @@ void Library::addCD(const CD& cd) {
 void Library::borrowBook(const std::string bookTitle)
 {
     bool bookFound = false;
+//    auto is showing item class in this case.
     for(const auto& itemPtr: items)
     {
         if(itemPtr->getTitle() == bookTitle)
         {
             std::cout << "You are borrowing " << itemPtr->getTitle();
             bookFound = true;
+            itemPtr->setAvailability(false);
+            bool result = itemPtr->getAvailability();
+            std::cout << (result ? "Available" : "Unavailable") << std::endl;
+
+//            itemPtr->setAvailability()
 //            std::string itemId = book.getId();
 //            std::string itemTitle;
 //            std::string bookAuthor;
@@ -85,6 +91,10 @@ void Library::showAvailableBooks() const {
         std::cout << "Id: " << itemPtr -> getId() << std::endl;
         std::cout << "Title: " << itemPtr->getTitle() << std::endl;
         std::cout << itemPtr->getDate() << std::endl;
+        bool result = itemPtr->getAvailability();
+
+        // Print "available" if result is true, otherwise print "unavailable"
+        std::cout << (result ? "Available" : "Unavailable") << std::endl;
         Book* bookPtr = dynamic_cast<Book *>(itemPtr);
         if(bookPtr != nullptr){
             std::cout << "Author: " << bookPtr->getAuthor() << std::endl;
