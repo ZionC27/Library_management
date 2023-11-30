@@ -119,8 +119,9 @@ int main() {
                 if (accessedUser.getUsername().empty()) {
                     std::cout << "No such user" << std::endl;
                 } else {
-                    accessedUser.printuser();
-                    std::cout << "Select which book you want to borrow" << std::endl;
+                    std::cout << "Which one do you want to borrow? Book or CD" << std::endl;
+                    std::string selection;
+                    selection = library.borrowSelection();
                     library.showAvailableBooks();
                     std::string bookName;
                     std::cout << "Enter the book name: " << std::endl;

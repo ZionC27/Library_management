@@ -26,6 +26,7 @@ public:
     void addCD(const CD& cd);
 //    void printBooks() const;
     void printCD() const;
+    std::string borrowSelection()const;
     void borrowBook(const std::string book);
     void showAvailableBooks() const;
     void showItemDetails() const;

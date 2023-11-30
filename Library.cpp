@@ -53,6 +53,20 @@ void Library::addCD(const CD& cd) {
     cds.push_back(cd);
 }
 
+std::string Library::borrowSelection() const
+{
+    do
+    {
+        std::string selection;
+        cin >> selection;
+        if (selection == "cd" || selection == "CD") {
+            return "CD";
+        } else if (selection == "book" || selection == "Book") {
+            return "Book";
+        }
+        cout << "Invalid selection choose CD or Book again" << endl;
+    } while(true);
+}
 
 void Library::borrowBook(const std::string bookTitle)
 {
