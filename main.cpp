@@ -31,14 +31,15 @@ int actions() {
         cout << "1. Do you want to create an account?" << endl;
         cout << "2. Do you want to borrow a book or CD?" << endl;
         cout << "3. Do you want to return a book or CD?" << endl;
-        cout << "4. Do you want to see borrowing and returning history of your account?" << endl;
-        cout << "5. Do you want to exit?" << endl;
+        cout << "4 Do you want to see item details?" << endl;
+        cout << "5. Do you want to see borrowing and returning history of your account?" << endl;
+        cout << "6. Do you want to exit?" << endl;
         cout << "------------------------------------" << endl;
         cout << "Enter action number: " << endl;
 
         cin >> action_number;
 
-        if (action_number >= 1 && action_number <= 5) {
+        if (action_number >= 1 && action_number <= 6) {
             validInput = true;
         } else {
             cout << "Please enter a number between 1 and 5." << endl;
@@ -89,15 +90,17 @@ int main() {
     std::string date = currentDate();
     item* first = new Book("12", "firstBook", "firstAuthor", 120, true, date);
     item* second = new Book("2", "secondBook", "secondAuthor", 120, true, date);
+    item* third = new CD("2", "ThirdCD", "CDDirector", 111, true, date);
 
 
     library.addBook(first);
     library.addBook(second);
+    library.addBook(third);
 
     int act = 0;
     string bookName;
 
-    while (act != 5) {
+    while (act != 6) {
         act = actions();
         std::cout << "Action chosen is: " << act << std::endl;
 
@@ -130,10 +133,13 @@ int main() {
                 std::cout << "You entered 3" << std::endl;
                 break;
             case 4:
-                std::cout << "You entered 4" << std::endl;
+                library.showItemDetails();
                 break;
             case 5:
-                std::cout << "Exiting..." << std::endl;
+                std::cout << "You entered 5" << std::endl;
+                break;
+            case 6:
+                std::cout << "Exit..." << std::endl;
                 break;
             default:
                 std::cout << "Invalid input or out of range" << std::endl;

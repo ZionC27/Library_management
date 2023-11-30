@@ -46,3 +46,14 @@ void Book::print() const {
     cout << "Pages: " << pages << endl;
     cout << endl;
 }
+
+void Book::showDetails() const {
+    std::cout << "Book Details:" << std::endl;
+    std::cout << "Id: " << getId() << std::endl;
+    std::cout << "Title: " << getTitle() << std::endl;
+    std::cout << "Date: " << getDate() << std::endl;
+    std::cout << (getAvailability() ? "Available" : "Unavailable") << std::endl;
+    std::cout << "Author: " << author << std::endl;
+    std::cout << "Pages: " << pages << std::endl;
+    std::cout << std::endl;
+}

@@ -45,3 +45,14 @@ void CD::print() const {
     cout << "Runtime: " << runtime << endl;
     cout << endl;
 }
+
+void CD::showDetails() const {
+    std::cout << "CD Details:" << std::endl;
+    std::cout << "Id: " << getId() << std::endl;
+    std::cout << "Title: " << getTitle() << std::endl;
+    std::cout << "Date: " << getDate() << std::endl;
+    std::cout << (getAvailability() ? "Available" : "Unavailable") << std::endl;
+    std::cout << "Director: " << director << std::endl;
+    std::cout << "Runtime: " << runtime << std::endl;
+    std::cout << std::endl;
+}

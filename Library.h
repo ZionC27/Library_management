@@ -28,6 +28,7 @@ public:
     void printCD() const;
     void borrowBook(const std::string book);
     void showAvailableBooks() const;
+    void showItemDetails() const;
 
     void displayAllUser();
 
