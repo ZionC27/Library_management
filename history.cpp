@@ -12,7 +12,7 @@ void history::addItem(const std::string username, const std::string& itemId, con
     historyList.push_back(newRecord);
 }
 
-std::vector<history::Record*> history::searchItemsById(const std::string& searchId) const {
+std::vector<history::Record*> history::searchItemsByUsername(const std::string& searchId) const {
     std::vector<Record*> foundRecords;
     for (const auto& recordPtr : historyList) {
         if (recordPtr->username == searchId) {

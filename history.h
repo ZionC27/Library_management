@@ -27,7 +27,7 @@ public:
 
     void addItem(const std::string username, const std::string& itemId, const std::string& itemType, bool availability, const std::string& date);
 
-    std::vector<Record*> searchItemsById(const std::string& searchId) const;
+    std::vector<Record*> searchItemsByUsername(const std::string& searchId) const;
 
     void displayRecords(const std::vector<Record*>& records) const;
 

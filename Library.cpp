@@ -69,7 +69,7 @@ std::string Library::borrowSelection() const
     } while(true);
 }
 
-void Library::borrowBook(const std::string bookTitle, const std::string username)
+void Library::borrowItem(const std::string bookTitle, const std::string username)
 {
     bool bookFound = false;
 //    auto is showing item class in this case.
@@ -96,7 +96,7 @@ void Library::borrowBook(const std::string bookTitle, const std::string username
 }
 
 void Library::userHistory(std::string username) const {
-    std::vector<history::Record*> foundRecords = history.searchItemsById(username);
+    std::vector<history::Record*> foundRecords = history.searchItemsByUsername(username);
     history.displayRecords(foundRecords);
 }
 

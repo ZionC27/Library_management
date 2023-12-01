@@ -109,7 +109,7 @@ int main() {
     u.printuser();
     std::string date = currentDate();
     item* first = new Book("12", "firstBook", "firstAuthor", 120, true, date);
-    item* second = new Book("2", "secondBook", "secondAuthor", 120, true, date);
+    item* second = new Book("2", "secondBook", "secondAuthor", 100, true, date);
     item* third = new CD("2", "ThirdCD", "CDDirector", 111, true, date);
 
 
@@ -138,7 +138,7 @@ int main() {
                     std::string bookName;
                     std::cout << "Enter the item name: " << std::endl;
                     std::cin >> bookName;
-                    library.borrowBook(bookName,username);
+                    library.borrowItem(bookName,username);
                 }
                 break;
             }
