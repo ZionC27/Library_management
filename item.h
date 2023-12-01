@@ -37,7 +37,9 @@ public:
     string getDate() const;
 
     virtual void print() const;
+    virtual void availableItems() const = 0;
     virtual void showDetails() const = 0;
+
 };
 
 #endif //LIBRARY_MANAGEMENT_ITEM_H

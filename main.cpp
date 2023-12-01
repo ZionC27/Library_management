@@ -122,7 +122,7 @@ int main() {
                     std::cout << "Which one do you want to borrow? Book or CD" << std::endl;
                     std::string selection;
                     selection = library.borrowSelection();
-                    library.showAvailableBooks();
+                    library.showAvailableItems(selection);
                     std::string bookName;
                     std::cout << "Enter the book name: " << std::endl;
                     std::cin >> bookName;

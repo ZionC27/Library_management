@@ -57,3 +57,11 @@ void Book::showDetails() const {
     std::cout << "Pages: " << pages << std::endl;
     std::cout << std::endl;
 }
+
+void Book::availableItems() const {
+    std::cout << "Book Title: " << getTitle() << std::endl;
+    bool result = getAvailability();
+
+    // Print "available" if result is true, otherwise print "unavailable"
+    std::cout << (result ? "Available" : "Unavailable") << std::endl;
+}

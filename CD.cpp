@@ -56,3 +56,11 @@ void CD::showDetails() const {
     std::cout << "Runtime: " << runtime << std::endl;
     std::cout << std::endl;
 }
+
+void CD::availableItems() const {
+    std::cout << "CD Title: " << getTitle() << std::endl;
+    bool result = getAvailability();
+
+    // Print "available" if result is true, otherwise print "unavailable"
+    std::cout << (result ? "Available" : "Unavailable") << std::endl;
+}

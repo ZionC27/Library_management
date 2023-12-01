@@ -30,8 +30,10 @@ public:
     int getpage() const;
     void setpage(const int& page);
 
-    void print() const override;
+    void print() const;
+    void availableItems() const;
     void showDetails() const override;
+
 };
 
 #endif //LIBRARY_MANAGEMENT_BOOK_H

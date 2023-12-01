@@ -29,7 +29,8 @@ public:
     void setruntime(const int& CDRuntime);
 
     void print() const override;
-    void showDetails() const override;
+    void showDetails() const;
+    void availableItems() const;
 };
 
 

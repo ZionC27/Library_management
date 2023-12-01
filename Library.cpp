@@ -96,17 +96,22 @@ void Library::borrowBook(const std::string bookTitle)
     }
 }
 
-void Library::showAvailableBooks() const {
-    std::cout << "Available books:" << std::endl;
-    for(const auto& itemPtr : items) {
-        std::cout << "Title: " << itemPtr->getTitle() << std::endl;
-        bool result = itemPtr->getAvailability();
+void Library::showAvailableItems(std::string selection) const {
+    std::cout << "Available items:" << std::endl;
+    for (const auto &itemPtr: items) {
+        if (selection == "CD") {
+            if(CD *cdPtr = dynamic_cast<CD *>(itemPtr)) {
+                cdPtr->availableItems();
+            } else {
+                continue;
+            }
 
-        // Print "available" if result is true, otherwise print "unavailable"
-        std::cout << (result ? "Available" : "Unavailable") << std::endl;
-        Book* bookPtr = dynamic_cast<Book *>(itemPtr);
-        if(bookPtr != nullptr){
-            std::cout << std::endl;
+        } else if (selection == "Book") {
+            if (auto bookPtr = dynamic_cast<Book *>(itemPtr)) {
+                bookPtr->availableItems();
+            } else {
+                continue;
+            }
         }
     }
 }
