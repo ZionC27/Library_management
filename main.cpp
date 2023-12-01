@@ -61,7 +61,6 @@ std::string currentDate() {
 }
 
 // Function to check if a user exists and print their details
-// Function to check if a user exists and print their details
 std::string checkAndPrintUser(Library& library) {
     std::string userInput;
     std::cout << "What is your ID or name? " << std::endl;
@@ -142,9 +141,18 @@ int main() {
                 }
                 break;
             }
-            case 3:
-                std::cout << "You entered 3" << std::endl;
+            case 3:{
+                string username = checkAndPrintUser(library);
+                if (username == ""){}
+                else {
+                    cout << "Enter the item ID: " << std::endl;
+                    string ItemId;
+                    cin >> ItemId;
+                    library.returnItem(ItemId, username);
+                }
                 break;
+            }
+
             case 4: {
                 std::string selection;
                 selection = library.borrowSelection();

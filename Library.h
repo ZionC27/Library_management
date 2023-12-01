@@ -38,6 +38,8 @@ public:
 
     void displayUserbyID(const string &id);
     Users checkuser(const string entered);
+
+    void returnItem(const string itemId, const string username);
 };
 
 #endif // LIBRARY_H

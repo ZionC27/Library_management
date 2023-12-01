@@ -95,6 +95,33 @@ void Library::borrowItem(const std::string bookTitle, const std::string username
     }
 }
 
+void Library::returnItem(const std::string itemId, const std::string username)
+{
+    bool IdFound = false;
+//    auto is showing item class in this case.
+    for(const auto& itemPtr: items)
+    {
+        if(itemPtr->getId() == itemId)
+        {
+            string itemID, itemType, itemDate;
+            bool availability;
+            itemID = itemPtr->getId();
+            cout << "Enter Item type: ";
+            cin >> itemType ;
+            itemPtr->setAvailability(true);
+            availability = itemPtr->getAvailability();
+            itemDate = itemPtr->getDate();
+            std::cout << "You are returning " << itemPtr->getTitle() << endl;
+            IdFound = true;
+            history.addItem(username, itemID, itemType, availability, itemDate);
+            break;
+        }
+    }
+    if(!IdFound) {
+        std::cout << itemId << " doesn't exists" << std::endl;
+    }
+}
+
 void Library::userHistory(std::string username) const {
     std::vector<history::Record*> foundRecords = history.searchItemsByUsername(username);
     history.displayRecords(foundRecords);
