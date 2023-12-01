@@ -29,7 +29,7 @@ public:
     std::string borrowSelection()const;
     void borrowBook(const std::string book);
     void showAvailableItems(std::string selection) const;
-    void showItemDetails() const;
+    void showItemDetails(std::string selection) const;
 
     void displayAllUser();
 

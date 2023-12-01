@@ -119,12 +119,11 @@ int main() {
                 if (accessedUser.getUsername().empty()) {
                     std::cout << "No such user" << std::endl;
                 } else {
-                    std::cout << "Which one do you want to borrow? Book or CD" << std::endl;
                     std::string selection;
                     selection = library.borrowSelection();
                     library.showAvailableItems(selection);
                     std::string bookName;
-                    std::cout << "Enter the book name: " << std::endl;
+                    std::cout << "Enter the item name: " << std::endl;
                     std::cin >> bookName;
                     library.borrowBook(bookName);
                 }
@@ -133,9 +132,12 @@ int main() {
             case 3:
                 std::cout << "You entered 3" << std::endl;
                 break;
-            case 4:
-                library.showItemDetails();
+            case 4: {
+                std::string selection;
+                selection = library.borrowSelection();
+                library.showItemDetails(selection);
                 break;
+            }
             case 5:
                 std::cout << "You entered 5" << std::endl;
                 break;

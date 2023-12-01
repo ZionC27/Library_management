@@ -57,6 +57,7 @@ std::string Library::borrowSelection() const
 {
     do
     {
+        std::cout << "Which one do you want to select? Book or CD" << std::endl;
         std::string selection;
         cin >> selection;
         if (selection == "cd" || selection == "CD") {
@@ -136,10 +137,23 @@ void Library::showAvailableItems(std::string selection) const {
 //}
 //
 
-void Library::showItemDetails() const {
+void Library::showItemDetails(std::string selection) const {
     std::cout << "Available items:" << std::endl;
-    for (const auto& itemPtr : items) {
-        itemPtr->showDetails();
+    for (const auto &itemPtr: items) {
+        if (selection == "CD") {
+            if(CD *cdPtr = dynamic_cast<CD *>(itemPtr)) {
+                cdPtr->showDetails();
+            } else {
+                continue;
+            }
+
+        } else if (selection == "Book") {
+            if (auto bookPtr = dynamic_cast<Book *>(itemPtr)) {
+                bookPtr->showDetails();
+            } else {
+                continue;
+            }
+        }
     }
 }
 
