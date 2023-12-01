@@ -139,7 +139,7 @@ int main() {
                 break;
             }
             case 5:
-                std::cout << "You entered 5" << std::endl;
+                library.userHistory();
                 break;
             case 6:
                 std::cout << "Exit..." << std::endl;

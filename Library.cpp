@@ -87,11 +87,6 @@ void Library::borrowBook(const std::string bookTitle)
             std::cout << "You are borrowing " << itemPtr->getTitle() << endl;
             bookFound = true;
             history.addItem(itemID, itemType, availability, itemDate);
-            std::string id;
-            cout << "select an id" << endl;
-            cin >> id;
-            std::vector<history::Record*> foundRecords = history.searchItemsById(id);
-            history.displayRecords(foundRecords);
             break;
         }
     }
@@ -99,6 +94,15 @@ void Library::borrowBook(const std::string bookTitle)
         std::cout << bookTitle << " doesn't exists" << std::endl;
     }
 }
+
+void Library::userHistory() const {
+    std::string id;
+    cout << "select an id" << endl;
+    cin >> id;
+    std::vector<history::Record*> foundRecords = history.searchItemsById(id);
+    history.displayRecords(foundRecords);
+}
+
 
 void Library::showAvailableItems(std::string selection) const {
     std::cout << "Available items:" << std::endl;

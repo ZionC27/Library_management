@@ -30,6 +30,7 @@ public:
     void printCD() const;
     std::string borrowSelection()const;
     void borrowBook(const std::string book);
+    void userHistory() const;
     void showAvailableItems(std::string selection) const;
     void showItemDetails(std::string selection) const;
 
