@@ -86,9 +86,12 @@ void Library::borrowBook(const std::string bookTitle)
             itemDate = itemPtr->getDate();
             std::cout << "You are borrowing " << itemPtr->getTitle() << endl;
             bookFound = true;
-            history history;
             history.addItem(itemID, itemType, availability, itemDate);
-            history.displayHistory();
+            std::string id;
+            cout << "select an id" << endl;
+            cin >> id;
+            std::vector<history::Record*> foundRecords = history.searchItemsById(id);
+            history.displayRecords(foundRecords);
             break;
         }
     }

@@ -3,25 +3,38 @@
 //
 #include "history.h"
 
-// Constructor
+
 history::history() {}
 
-// Function to add a record of adding an item to history
+
 void history::addItem(const std::string& itemId, const std::string& itemType, bool availability, const std::string& date) {
     Record* newRecord = new Record{itemId, itemType, availability, date};
     historyList.push_back(newRecord);
 }
 
-// Function to display the history log
-void history::displayHistory() const {
+std::vector<history::Record*> history::searchItemsById(const std::string& searchId) const {
+    std::vector<Record*> foundRecords;
     for (const auto& recordPtr : historyList) {
-        std::cout << "Item ID: " << recordPtr->itemId << ", Item Type: " << recordPtr->itemType
-                  << ", Availability: " << (recordPtr->availability ? "Available" : "Unavailable")
-                  << ", Date: " << recordPtr->date << std::endl;
+        if (recordPtr->itemId == searchId) {
+            foundRecords.push_back(recordPtr);
+        }
+    }
+    return foundRecords;
+}
+
+void history::displayRecords(const std::vector<Record*>& records) const {
+    if (records.empty()) {
+        std::cout << "No records found for the given itemId." << std::endl;
+    } else {
+        std::cout << "Records found for the given itemId:" << std::endl;
+        for (const auto& recordPtr : records) {
+            std::cout << "Item ID: " << recordPtr->itemId << ", Item Type: " << recordPtr->itemType
+                      << ", Availability: " << (recordPtr->availability ? "Available" : "Unavailable")
+                      << ", Date: " << recordPtr->date << std::endl;
+        }
     }
 }
 
-// Destructor
 history::~history() {
     for (auto& recordPtr : historyList) {
         delete recordPtr; // Deallocate memory for each Record

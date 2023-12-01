@@ -16,6 +16,8 @@ private:
     std::vector<item*> items; // Vector to store Book objects
     std::vector<CD> cds;
     int nextUserID;
+    history history;
+
 
 public:
     Library();
