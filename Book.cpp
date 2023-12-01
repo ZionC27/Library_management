@@ -15,7 +15,7 @@ Book::Book() : item() {
 
 // Parameterized constructor
 Book::Book(string itemId, const std::string& itemTitle, const std::string& bookAuthor, int bookPages, bool isAvailable, const string itemDate)
-        : item(itemId, itemTitle, isAvailable,itemDate), pages(bookPages){
+        : item(itemId, itemTitle, isAvailable,itemDate), author(bookAuthor), pages(bookPages){
 }
 
 Book::~Book() {}
@@ -52,7 +52,7 @@ void Book::showDetails() const {
     std::cout << "Id: " << getId() << std::endl;
     std::cout << "Title: " << getTitle() << std::endl;
     std::cout << "Date: " << getDate() << std::endl;
-    std::cout << (getAvailability() ? "Available" : "Unavailable") << std::endl;
+    std::cout << "Availability: " << (getAvailability() ? "Available" : "Unavailable") << std::endl;
     std::cout << "Author: " << author << std::endl;
     std::cout << "Pages: " << pages << std::endl;
     std::cout << std::endl;
