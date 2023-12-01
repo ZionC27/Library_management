@@ -77,17 +77,24 @@ void Library::borrowItem(const std::string bookTitle, const std::string username
     {
         if(itemPtr->getTitle() == bookTitle)
         {
-            std::string itemID, itemType, itemDate;
-            bool availability;
-            itemID = itemPtr->getId();
-            itemType = "Book";
-            itemPtr->setAvailability(false);
-            availability = itemPtr->getAvailability();
-            itemDate = itemPtr->getDate();
-            std::cout << "You are borrowing " << itemPtr->getTitle() << endl;
-            bookFound = true;
-            history.addItem(username, itemID, itemType, availability, itemDate);
-            break;
+            if(itemPtr->getAvailability() == true) {
+                std::string itemID, itemType, itemDate;
+                bool availability;
+                itemID = itemPtr->getId();
+                itemType = "Book";
+                itemPtr->setAvailability(false);
+                availability = itemPtr->getAvailability();
+                itemDate = itemPtr->getDate();
+                std::cout << "You are borrowing " << itemPtr->getTitle() << endl;
+                bookFound = true;
+                history.addItem(username, itemID, itemType, availability, itemDate);
+                break;
+            }
+            else{
+                cout << "Book is currently borrowed" << endl;
+                bookFound = true;
+                break;
+            }
         }
     }
     if(!bookFound) {
