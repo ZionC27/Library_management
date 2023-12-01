@@ -7,15 +7,15 @@
 history::history() {}
 
 
-void history::addItem(const std::string& itemId, const std::string& itemType, bool availability, const std::string& date) {
-    Record* newRecord = new Record{itemId, itemType, availability, date};
+void history::addItem(const std::string username, const std::string& itemId, const std::string& itemType, bool availability, const std::string& date) {
+    Record* newRecord = new Record{username, itemId, itemType, availability, date};
     historyList.push_back(newRecord);
 }
 
 std::vector<history::Record*> history::searchItemsById(const std::string& searchId) const {
     std::vector<Record*> foundRecords;
     for (const auto& recordPtr : historyList) {
-        if (recordPtr->itemId == searchId) {
+        if (recordPtr->username == searchId) {
             foundRecords.push_back(recordPtr);
         }
     }

@@ -29,8 +29,8 @@ public:
 //    void printBooks() const;
     void printCD() const;
     std::string borrowSelection()const;
-    void borrowBook(const std::string book);
-    void userHistory() const;
+    void borrowBook(const std::string book, const std::string username);
+    void userHistory(std::string username) const;
     void showAvailableItems(std::string selection) const;
     void showItemDetails(std::string selection) const;
 

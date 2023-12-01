@@ -60,6 +60,26 @@ std::string currentDate() {
     return ss.str();
 }
 
+// Function to check if a user exists and print their details
+// Function to check if a user exists and print their details
+std::string checkAndPrintUser(Library& library) {
+    std::string userInput;
+    std::cout << "What is your ID or name? " << std::endl;
+    std::cin >> userInput;
+
+    Users accessedUser = library.checkuser(userInput);
+    std::string username = accessedUser.getUsername();
+    if (!username.empty()) {
+        accessedUser.printuser();
+        return username; // Return username if user is found
+    } else {
+        std::cout << "No such user" << std::endl;
+        return ""; // Return empty string if user is not found
+    }
+}
+
+
+
 int main() {
     Library library;
     library.addUser("a", "1");
@@ -109,15 +129,8 @@ int main() {
                 createUsers(library);
                 break;
             case 2: {
-                //need to make this into function to code cleaner
-                std::string userInput;
-                std::cout << "What is your ID or name? " << std::endl;
-                std::cin >> userInput;
-                Users accessedUser  = library.checkuser(userInput);
-                //print name and id
-                accessedUser.printuser();
-                if (accessedUser.getUsername().empty()) {
-                    std::cout << "No such user" << std::endl;
+                std::string username = checkAndPrintUser(library);
+                if(username == ""){
                 } else {
                     std::string selection;
                     selection = library.borrowSelection();
@@ -125,7 +138,7 @@ int main() {
                     std::string bookName;
                     std::cout << "Enter the item name: " << std::endl;
                     std::cin >> bookName;
-                    library.borrowBook(bookName);
+                    library.borrowBook(bookName,username);
                 }
                 break;
             }
@@ -138,9 +151,16 @@ int main() {
                 library.showItemDetails(selection);
                 break;
             }
-            case 5:
-                library.userHistory();
+            case 5: {
+                std::string username;
+                username = checkAndPrintUser(library);
+                if(username == ""){
+                }
+                else{
+                    library.userHistory(username);
+                }
                 break;
+            }
             case 6:
                 std::cout << "Exit..." << std::endl;
                 break;

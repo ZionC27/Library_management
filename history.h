@@ -12,6 +12,7 @@
 class history {
 public:
     struct Record {
+        std::string username;
         std::string itemId;
         std::string itemType;
         bool availability;
@@ -24,7 +25,7 @@ private:
 public:
     history();
 
-    void addItem(const std::string& itemId, const std::string& itemType, bool availability, const std::string& date);
+    void addItem(const std::string username, const std::string& itemId, const std::string& itemType, bool availability, const std::string& date);
 
     std::vector<Record*> searchItemsById(const std::string& searchId) const;
 
