@@ -8,7 +8,7 @@
 using namespace std;
 // Default constructor
 Book::Book() : item() {
-    title = "";
+
     author = ""; // Default author
     int pages = 0;
 }
