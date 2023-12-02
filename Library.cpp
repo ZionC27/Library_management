@@ -77,17 +77,24 @@ void Library::borrowItem(const std::string bookTitle, const std::string username
     {
         if(itemPtr->getTitle() == bookTitle)
         {
-            std::string itemID, itemType, itemDate;
-            bool availability;
-            itemID = itemPtr->getId();
-            itemType = "Book";
-            itemPtr->setAvailability(false);
-            availability = itemPtr->getAvailability();
-            itemDate = itemPtr->getDate();
-            std::cout << "You are borrowing " << itemPtr->getTitle() << endl;
-            bookFound = true;
-            history.addItem(username, itemID, itemType, availability, itemDate);
-            break;
+            if(itemPtr->getAvailability() == true) {
+                std::string itemID, itemType, itemDate;
+                bool availability;
+                itemID = itemPtr->getId();
+                itemType = "Book";
+                itemPtr->setAvailability(false);
+                availability = itemPtr->getAvailability();
+                itemDate = itemPtr->getDate();
+                std::cout << "You are borrowing " << itemPtr->getTitle() << endl;
+                bookFound = true;
+                history.addItem(username, itemID, itemType, availability, itemDate);
+                break;
+            }
+            else{
+                cout << "Book is currently borrowed" << endl;
+                bookFound = true;
+                break;
+            }
         }
     }
     if(!bookFound) {
@@ -103,18 +110,24 @@ void Library::returnItem(const std::string itemId, const std::string username)
     {
         if(itemPtr->getId() == itemId)
         {
-            string itemID, itemType, itemDate;
-            bool availability;
-            itemID = itemPtr->getId();
-            cout << "Enter Item type: ";
-            cin >> itemType ;
-            itemPtr->setAvailability(true);
-            availability = itemPtr->getAvailability();
-            itemDate = itemPtr->getDate();
-            std::cout << "You are returning " << itemPtr->getTitle() << endl;
-            IdFound = true;
-            history.addItem(username, itemID, itemType, availability, itemDate);
-            break;
+            if(itemPtr->getAvailability() == false) {
+                string itemID, itemType, itemDate;
+                bool availability;
+                itemID = itemPtr->getId();
+                cout << "Enter Item type: ";
+                cin >> itemType;
+                itemPtr->setAvailability(true);
+                availability = itemPtr->getAvailability();
+                itemDate = itemPtr->getDate();
+                std::cout << "You are returning " << itemPtr->getTitle() << endl;
+                IdFound = true;
+                history.addItem(username, itemID, itemType, availability, itemDate);
+                break;
+            }
+            else{
+                cout << "You haven't borrowed that item" << endl;
+                IdFound = true;
+            }
         }
     }
     if(!IdFound) {

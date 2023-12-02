@@ -21,7 +21,6 @@ public:
     ~Book();
 
 
-
     // Accessors and mutators (getters and setters) for author and page
     string getAuthor() const;
     void setAuthor(const string& bookAuthor);
