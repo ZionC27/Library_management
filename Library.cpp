@@ -110,18 +110,24 @@ void Library::returnItem(const std::string itemId, const std::string username)
     {
         if(itemPtr->getId() == itemId)
         {
-            string itemID, itemType, itemDate;
-            bool availability;
-            itemID = itemPtr->getId();
-            cout << "Enter Item type: ";
-            cin >> itemType ;
-            itemPtr->setAvailability(true);
-            availability = itemPtr->getAvailability();
-            itemDate = itemPtr->getDate();
-            std::cout << "You are returning " << itemPtr->getTitle() << endl;
-            IdFound = true;
-            history.addItem(username, itemID, itemType, availability, itemDate);
-            break;
+            if(itemPtr->getAvailability() == false) {
+                string itemID, itemType, itemDate;
+                bool availability;
+                itemID = itemPtr->getId();
+                cout << "Enter Item type: ";
+                cin >> itemType;
+                itemPtr->setAvailability(true);
+                availability = itemPtr->getAvailability();
+                itemDate = itemPtr->getDate();
+                std::cout << "You are returning " << itemPtr->getTitle() << endl;
+                IdFound = true;
+                history.addItem(username, itemID, itemType, availability, itemDate);
+                break;
+            }
+            else{
+                cout << "You haven't borrowed that item" << endl;
+                IdFound = true;
+            }
         }
     }
     if(!IdFound) {
