@@ -12,7 +12,6 @@ using namespace std;
 class Book : public item {
 private:
     string author;
-    string title;
     int pages;
 
 public:

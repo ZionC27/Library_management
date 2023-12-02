@@ -127,7 +127,7 @@ void Library::userHistory(std::string username) const {
     history.displayRecords(foundRecords);
 }
 
-
+// show the Available that is stored in the vector that stores items
 void Library::showAvailableItems(std::string selection) const {
     std::cout << "Available items:" << std::endl;
     for (const auto &itemPtr: items) {
@@ -210,4 +210,8 @@ Users Library::checkuser(const string entered) {
         }
     }
     return Users();  // Return an empty Users object if no match is found
+}
+
+Library::~Library() {
+
 }

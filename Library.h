@@ -40,6 +40,7 @@ public:
     Users checkuser(const string entered);
 
     void returnItem(const string itemId, const string username);
+    ~Library()
 };
 
 #endif // LIBRARY_H
