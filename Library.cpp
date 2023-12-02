@@ -44,7 +44,7 @@ void Library::displayAllUser() {
 }
 
 //adding book vector
-void Library::addBook(item* bookPtr) {
+void Library::addItem(item* bookPtr) {
     items.push_back(bookPtr);
 }
 
@@ -142,7 +142,7 @@ void Library::userHistory(std::string username) const {
 
 // show the Available that is stored in the vector that stores items
 void Library::showAvailableItems(std::string selection) const {
-    std::cout << "Available items:" << std::endl;
+    std::cout << "List of Items:" << std::endl;
     for (const auto &itemPtr: items) {
         if (selection == "CD") {
             if(CD *cdPtr = dynamic_cast<CD *>(itemPtr)) {

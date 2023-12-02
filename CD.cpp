@@ -58,9 +58,9 @@ void CD::showDetails() const {
 }
 
 void CD::availableItems() const {
-    std::cout << "CD Title: " << getTitle() << std::endl;
+    std::cout << "CD Title: " << getTitle();
     bool result = getAvailability();
 
     // Print "available" if result is true, otherwise print "unavailable"
-    std::cout << (result ? "Available" : "Unavailable") << std::endl;
+    std::cout << (result ? "(Available)" : "(Unavailable)") << std::endl;
 }

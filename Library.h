@@ -24,7 +24,7 @@ public:
     std::string getNextUserID();
     void addUser(const std::string& username, const std::string& userID);
     void displayUserbyName(const std::string& username);
-    void addBook(item* bookPtr);
+    void addItem(item* bookPtr);
     void addCD(const CD& cd);
 //    void printBooks() const;
     void printCD() const;

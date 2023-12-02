@@ -81,10 +81,6 @@ std::string checkAndPrintUser(Library& library) {
 
 int main() {
     Library library;
-    library.addUser("a", "1");
-    library.addUser("b", "2");
-    library.addUser("c", "3");
-    library.addUser("d", "4");
 
     // tester for check user
     Users acsessuser = library.checkuser("c");
@@ -107,15 +103,29 @@ int main() {
     Users u("asdas", "123");
     u.printuser();
     std::string date = currentDate();
-    item* first = new Book("12", "firstBook", "firstAuthor", 120, true, date);
-    item* second = new Book("2", "secondBook", "secondAuthor", 100, true, date);
-    item* third = new CD("2", "ThirdCD", "CDDirector", 111, true, date);
+    item* bfirst = new Book("1", "firstBook", "firstAuthor", 120, true, date);
+    item* bsecond = new Book("2", "secondBook", "secondAuthor", 100, true, date);
+    item* bthird = new Book("3", "thirdBook", "firstAuthor", 120, true, date);
+    item* bfourth = new Book("4", "fourthBook", "secondAuthor", 100, true, date);
+    item* bfifth = new Book("5", "fifthBook", "secondAuthor", 100, true, date);
+
+    item* cfirst = new CD("6", "firstCD", "firstDirector", 111, true, date);
+    item* csecond = new CD("7", "secondCD", "secondDirector", 111, true, date);
+    item* cthird = new CD("8", "thirdCD", "thirdDirector", 111, true, date);
+    item* cfourth = new CD("9", "fourthCD", "fourthDirector", 111, true, date);
+    item* cfifth = new CD("10", "fifthCD", "fifthDirector", 111, true, date);
 
 
-
-    library.addBook(first);
-    library.addBook(second);
-    library.addBook(third);
+    library.addItem(bfirst);
+    library.addItem(bsecond);
+    library.addItem(bthird);
+    library.addItem(bfourth);
+    library.addItem(bfifth);
+    library.addItem(cfirst);
+    library.addItem(csecond);
+    library.addItem(cthird);
+    library.addItem(cfourth);
+    library.addItem(cfifth);
 
     int act = 0;
     string bookName;
