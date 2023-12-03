@@ -12,9 +12,11 @@ private:
     string userID;
 
 public:
+    //Constructors
     Users();
     Users(const string& uname, const string& UID);
 
+    // Getter and setter
     string getUsername() const;
     void setUsername(const string& uname);
 

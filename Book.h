@@ -28,8 +28,9 @@ public:
     int getpage() const;
     void setpage(const int& page);
 
-    void print() const;
-    void availableItems() const;
+    // functions that override item class function
+    void print() const override;
+    void availableItems() const override;
     void showDetails() const override;
 
 };

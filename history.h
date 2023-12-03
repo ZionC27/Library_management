@@ -7,7 +7,7 @@
 #include <vector>
 #include <string>
 #include <iostream> // Include necessary header for cout
-
+using namespace std;
 
 class history {
 public:
@@ -23,15 +23,15 @@ private:
     std::vector<Record*> historyList; // Store pointers to Record objects
 
 public:
+    // Constructors / Deconstructor
     history();
-
+    ~history();
     void addItem(const std::string username, const std::string& itemId, const std::string& itemType, bool availability, const std::string& date);
-
-    std::vector<Record*> searchItemsByUsername(const std::string& searchId) const;
-
+    // to get all borrowed item from a user
+    vector<Record*> searchItemsByUsername(const std::string& searchId) const;
+    // display all borrow and return records
     void displayRecords(const std::vector<Record*>& records) const;
 
-    ~history();
 };
 
 #endif //LIBRARY_MANAGEMENT_HISTORY_H

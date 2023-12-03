@@ -28,9 +28,10 @@ public:
     string getruntime() const;
     void setruntime(const int& CDRuntime);
 
+    // functions that override item class function
     void print() const override;
-    void showDetails() const;
-    void availableItems() const;
+    void showDetails() const override;
+    void availableItems() const override;
 };
 
 

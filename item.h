@@ -36,7 +36,9 @@ public:
     void setAvailability(bool isAvailable);
     string getDate() const;
 
+    // to print all data member data
     virtual void print() const;
+    // functions to be override by CD and Book classes
     virtual void availableItems() const = 0;
     virtual void showDetails() const = 0;
 
