@@ -47,6 +47,7 @@ void Book::print() const {
     cout << endl;
 }
 
+//override the showDetails function from Item
 void Book::showDetails() const {
     std::cout << "Book Details:" << std::endl;
     std::cout << "Id: " << getId() << std::endl;
@@ -58,6 +59,7 @@ void Book::showDetails() const {
     std::cout << std::endl;
 }
 
+//override the availableItems function from Item
 void Book::availableItems() const {
     std::cout << "Book Title: " << getTitle();
     bool result = getAvailability();

@@ -14,5 +14,4 @@ add_executable(Library_management main.cpp
         CD.cpp
         history.cpp
         history.h
-        historyEntry.cpp
-        historyEntry.h)
+)

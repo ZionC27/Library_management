@@ -46,6 +46,7 @@ void CD::print() const {
     cout << endl;
 }
 
+//override the showDetails function from Item
 void CD::showDetails() const {
     std::cout << "CD Details:" << std::endl;
     std::cout << "Id: " << getId() << std::endl;
@@ -57,6 +58,7 @@ void CD::showDetails() const {
     std::cout << std::endl;
 }
 
+//override the availableItems function from Item
 void CD::availableItems() const {
     std::cout << "CD Title: " << getTitle();
     bool result = getAvailability();
