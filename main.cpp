@@ -100,8 +100,7 @@ int main() {
 
 
     //  class tester
-    Users u("asdas", "123");
-    u.printuser();
+
     std::string date = currentDate();
     item* bfirst = new Book("1", "firstBook", "firstAuthor", 120, true, date);
     item* bsecond = new Book("2", "secondBook", "secondAuthor", 100, true, date);
@@ -156,10 +155,10 @@ int main() {
                 string username = checkAndPrintUser(library);
                 if (username == ""){}
                 else {
-                    cout << "Enter the item ID: " << std::endl;
-                    string ItemId;
-                    cin >> ItemId;
-                    library.returnItem(ItemId, username);
+                    cout << "Enter the item title: " << std::endl;
+                    string itemTitle;
+                    cin >> itemTitle;
+                    library.returnItem(itemTitle, username);
                 }
                 break;
             }

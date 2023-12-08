@@ -102,19 +102,20 @@ void Library::borrowItem(const std::string bookTitle, const std::string username
     }
 }
 
-void Library::returnItem(const std::string itemId, const std::string username)
+void Library::returnItem(const std::string itemTitle, const std::string username)
 {
     bool IdFound = false;
 //    auto is showing item class in this case.
     for(const auto& itemPtr: items)
     {
-        if(itemPtr->getId() == itemId)
+        if(itemPtr->getTitle() == itemTitle)
         {
             if(itemPtr->getAvailability() == false) {
+
                 string itemID, itemType, itemDate;
                 bool availability;
                 itemID = itemPtr->getId();
-                cout << "Enter Item type: ";
+                cout << "Enter Item type (Book/CD): ";
                 cin >> itemType;
                 itemPtr->setAvailability(true);
                 availability = itemPtr->getAvailability();
@@ -131,7 +132,7 @@ void Library::returnItem(const std::string itemId, const std::string username)
         }
     }
     if(!IdFound) {
-        std::cout << itemId << " doesn't exists" << std::endl;
+        std::cout << itemTitle << " doesn't exists" << std::endl;
     }
 }
 

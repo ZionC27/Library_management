@@ -24,9 +24,9 @@ std::vector<history::Record*> history::searchItemsByUsername(const std::string& 
 
 void history::displayRecords(const std::vector<Record*>& records) const {
     if (records.empty()) {
-        std::cout << "No records found for the given itemId." << std::endl;
+        std::cout << "No records found for the given username." << std::endl;
     } else {
-        std::cout << "Records found for the given itemId:" << std::endl;
+        std::cout << "Records found for the given username:" << std::endl;
         for (const auto& recordPtr : records) {
             std::cout << "Item ID: " << recordPtr->itemId << ", Item Type: " << recordPtr->itemType
                       << ", Availability: " << (recordPtr->availability ? "Available" : "Unavailable")
