@@ -37,12 +37,6 @@ void Library::displayUserbyID(const std::string& id) {
     }
 }
 
-void Library::displayAllUser() {
-    for (const Users& user : usersList) {
-        user.printuser();
-    }
-}
-
 //adding book vector
 void Library::addItem(item* bookPtr) {
     items.push_back(bookPtr);
