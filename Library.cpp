@@ -162,25 +162,6 @@ void Library::showAvailableItems(std::string selection) const {
     }
 }
 
-//void Library::showAvailableBooks() const {
-//    std::cout << "Available books:" << std::endl;
-//    for(const auto& itemPtr : items) {
-//        std::cout << "Id: " << itemPtr -> getId() << std::endl;
-//        std::cout << "Title: " << itemPtr->getTitle() << std::endl;
-//        std::cout << itemPtr->getDate() << std::endl;
-//        bool result = itemPtr->getAvailability();
-//
-//        // Print "available" if result is true, otherwise print "unavailable"
-//        std::cout << (result ? "Available" : "Unavailable") << std::endl;
-//        Book* bookPtr = dynamic_cast<Book *>(itemPtr);
-//        if(bookPtr != nullptr){
-//            std::cout << "Author: " << bookPtr->getAuthor() << std::endl;
-//            std::cout << "Pages: " << bookPtr->getpage() << std::endl;
-//            std::cout << std::endl;
-//        }
-//    }
-//}
-//
 
 void Library::showItemDetails(std::string selection) const {
     std::cout << "Available items:" << std::endl;
@@ -202,12 +183,6 @@ void Library::showItemDetails(std::string selection) const {
     }
 }
 
-
-//void Library::printBooks() const {
-//    for (const auto& book : books) {
-//        book.print();
-//    }
-//}
 
 void Library::printCD() const {
     for (const auto& cd : cds) {
